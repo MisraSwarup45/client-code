@@ -46,7 +46,7 @@ const ListProjects = () => {
 
   return (
     <>
-      {/* <Navbar /> */}
+      <Navbar />
       <div className="list-projects">
         <div className="search-bar">
           <input

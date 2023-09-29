@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import Navbar from './Navbar';
+import './Admins.scss';
 
 function Admins() {
   const [admins, setAdmins] = useState([]);
@@ -18,39 +20,42 @@ function Admins() {
   }, []);
 
   return (
-    <div className="App">
-      <h1>Admins</h1>
-      <ul>
-        {admins.map((admin) => (
-          <li key={admin.id}>
-            <h2>{admin.name}</h2>
-            <p>Email: {admin.user.email}</p>
+    <>
+      <Navbar />
+      <div className="App">
+        <h1>Admins List</h1>
+        <ul>
+          {admins.map((admin) => (
+            <li key={admin.id}>
+              <h2>{admin.name}</h2>
+              <p>Email: {admin.user.email}</p>
 
-            <h3>Experiences:</h3>
-            <ul>
-              {admin.experiences.map((experience) => (
-                <li key={experience.id}>
-                  Company: {experience.company_name} <br />
-                  Position: {experience.position} <br />
-                  Time Period: {experience.start_date} - {experience.end_date}
-                </li>
-              ))}
-            </ul>
+              <h3>Experiences:</h3>
+              <ul>
+                {admin.experiences.map((experience) => (
+                  <li key={experience.id}>
+                    Company: {experience.company_name} <br />
+                    Position: {experience.position} <br />
+                    Time Period: {experience.start_date} - {experience.end_date}
+                  </li>
+                ))}
+              </ul>
 
-            <h3>Educations:</h3>
-            <ul>
-              {admin.educations.map((education) => (
-                <li key={education.id}>
-                  Institute: {education.institute} <br /> 
-                  Degree: {education.degree} <br /> 
-                  Time Period: {education.start_date} - {education.end_date}
-                </li>
-              ))}
-            </ul>
-          </li>
-        ))}
-      </ul>
-    </div>
+              <h3>Educations:</h3>
+              <ul>
+                {admin.educations.map((education) => (
+                  <li key={education.id}>
+                    Institute: {education.institute} <br />
+                    Degree: {education.degree} <br />
+                    Time Period: {education.start_date} - {education.end_date}
+                  </li>
+                ))}
+              </ul>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </>
   );
 }
 

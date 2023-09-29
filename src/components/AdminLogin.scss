@@ -1,82 +1,122 @@
 /* AdminLogin.scss */
 
-.admin-login-wrapper {
-    max-width: 600px;
-    margin: 0 auto;
+/* Reset some default styles */
+* {
+    margin: 5%;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Body styles */
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f3f2ef;
+  }
+  
+  /* Container styles */
+  .admin-login-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin-top: 35%;
+  }
+  
+  /* Form styles */
+  .admin-form {
+    background-color: #fff;
+    border-radius: 8px;
     padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 80%; /* Change to 80% */
+    width: 100%;
+  }
+  
+  /* Form header styles */
+  h1 {
+    font-size: 1.8rem;
+    color: #0073b1;
+    margin-bottom: 20px;
+  }
+  
+  /* Form label styles */
+  label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  /* Form input styles */
+  input[type="text"],
+  input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
     border: 1px solid #ccc;
-    background-color: #f9f9f9;
-    margin-top: 5%;
-
-    form.admin-form {
-        label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-
-        input[type='text'],
-        textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: 16px;
-        }
-
-        .education-section,
-        .experience-section,
-        .project-section {
-            border: 1px solid #ccc;
-            padding: 15px;
-            margin-bottom: 15px;
-            border-radius: 4px;
-
-            label {
-                display: block;
-                margin-bottom: 5px;
-                font-weight: bold;
-            }
-
-            input[type='text'],
-            textarea {
-                width: 100%;
-                padding: 10px;
-                margin-bottom: 10px;
-                border: 1px solid #ccc;
-                border-radius: 4px;
-                font-size: 16px;
-            }
-        }
-
-        .add-section-btn {
-            margin-top: 10px;
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 4px;
-            padding: 10px 15px;
-            font-size: 16px;
-            cursor: pointer;
-
-            &:hover {
-                background-color: #0056b3;
-            }
-        }
-
-        button[type='submit'] {
-            background-color: #4caf50;
-            color: #fff;
-            border: none;
-            border-radius: 4px;
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-
-            &:hover {
-                background-color: #45a049;
-            }
-        }
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+  
+  /* Add section button styles */
+  .add-section-btn {
+    background-color: #0073b1;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.2s;
+  }
+  
+  .add-section-btn:hover {
+    background-color: #005a8a;
+  }
+  
+  /* Submit button styles */
+  button[type="submit"] {
+    background-color: #0073b1;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background-color 0.2s;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #005a8a;
+  }
+  
+  /* Education and Experience section styles */
+  .education-section,
+  .experience-section {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 15px;
+    margin-top: 20px;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 600px) {
+    .admin-form {
+      padding: 10px;
     }
-}
+  
+    h1 {
+      font-size: 1.5rem;
+    }
+  
+    input[type="text"],
+    input[type="date"] {
+      font-size: 0.9rem;
+    }
+  
+    .add-section-btn,
+    button[type="submit"] {
+      font-size: 1rem;
+    }
+  }

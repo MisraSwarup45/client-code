@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./Addproject.scss";
 import jwt_decode from "jwt-decode";
 import Cookies from "js-cookie";
+import Navbar from './Navbar';
 
 export default function AddProject() {
     const [project, setProject] = useState({
@@ -101,7 +102,9 @@ export default function AddProject() {
     };
 
     return (
-        <div className="main_add_project">
+        <>
+        <Navbar />
+            <div className="main_add_project">
             <h2>Add Project</h2>
             <div className="project_details">
                 {/* Input fields for project data */}
@@ -189,5 +192,6 @@ export default function AddProject() {
                 )}
             </div>
         </div>
+        </>
     );
 }

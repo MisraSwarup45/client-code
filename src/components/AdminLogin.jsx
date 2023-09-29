@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './AdminLogin.scss';
 import jwt_decode from 'jwt-decode';
 import Cookies from 'js-cookie';
+import Navbar from './Navbar';
 
 const AdminLogin = () => {
   const [formData, setFormData] = useState({
@@ -159,129 +160,131 @@ const AdminLogin = () => {
       // Handle any errors
       console.error('Error adding admin:', response.statusText);
     }
-  }; 
+  };
 
   return (
-    <div className="admin-login-wrapper">
-      <form onSubmit={handleSubmit} className="admin-form">
-        <label htmlFor="name">Full Name:</label>
-        <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} required />
+    <>
+      <div className="admin-login-wrapper">
+        <form onSubmit={handleSubmit} className="admin-form">
+          <label htmlFor="name">Full Name:</label>
+          <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} required />
 
-        <h3>Educations:</h3>
-        {formData.educations.map((edu, index) => (
-          <div key={index} className="education-section">
-            <label htmlFor={`institute-${index}`}>Institute:</label>
-            <input
-              type="text"
-              id={`institute-${index}`}
-              name="institute"
-              data-field-type="education"
-              data-index={index}
-              value={edu.institute}
-              onChange={handleChange}
-              required
-            />
+          <h3>Educations:</h3>
+          {formData.educations.map((edu, index) => (
+            <div key={index} className="education-section">
+              <label htmlFor={`institute-${index}`}>Institute:</label>
+              <input
+                type="text"
+                id={`institute-${index}`}
+                name="institute"
+                data-field-type="education"
+                data-index={index}
+                value={edu.institute}
+                onChange={handleChange}
+                required
+              />
 
-            <label htmlFor={`degree-${index}`}>Degree:</label>
-            <input
-              type="text"
-              id={`degree-${index}`}
-              name="degree"
-              data-field-type="education"
-              data-index={index}
-              value={edu.degree}
-              onChange={handleChange}
-              required
-            />
+              <label htmlFor={`degree-${index}`}>Degree:</label>
+              <input
+                type="text"
+                id={`degree-${index}`}
+                name="degree"
+                data-field-type="education"
+                data-index={index}
+                value={edu.degree}
+                onChange={handleChange}
+                required
+              />
 
-            <label htmlFor={`start_date-${index}`}>Start Date:</label>
-            <input
-              type="date" // Change to type="date"
-              id={`start_date-${index}`}
-              name="start_date"
-              data-field-type="education"
-              data-index={index}
-              value={edu.start_date}
-              onChange={handleChange}
-              required
-            />
+              <label htmlFor={`start_date-${index}`}>Start Date:</label>
+              <input
+                type="date" // Change to type="date"
+                id={`start_date-${index}`}
+                name="start_date"
+                data-field-type="education"
+                data-index={index}
+                value={edu.start_date}
+                onChange={handleChange}
+                required
+              />
 
-            <label htmlFor={`end_date-${index}`}>End Date:</label>
-            <input
-              type="date" // Change to type="date"
-              id={`end_date-${index}`}
-              name="end_date"
-              data-field-type="education"
-              data-index={index}
-              value={edu.end_date}
-              onChange={handleChange}
-              required
-            />
-          </div>
-        ))}
-        <button type="button" className="add-section-btn" onClick={handleAddEducation}>
-          Add Education
-        </button>
+              <label htmlFor={`end_date-${index}`}>End Date:</label>
+              <input
+                type="date" // Change to type="date"
+                id={`end_date-${index}`}
+                name="end_date"
+                data-field-type="education"
+                data-index={index}
+                value={edu.end_date}
+                onChange={handleChange}
+                required
+              />
+            </div>
+          ))}
+          <button type="button" className="add-section-btn" onClick={handleAddEducation}>
+            Add Education
+          </button>
 
-        <h3>Experiences:</h3>
-        {formData.experiences.map((exp, index) => (
-          <div key={index} className="experience-section">
-            <label htmlFor={`company_name-${index}`}>Company:</label>
-            <input
-              type="text"
-              id={`company_name-${index}`}
-              name="company_name"
-              data-field-type="experience"
-              data-index={index}
-              value={exp.company_name}
-              onChange={handleChange}
-              required
-            />
+          <h3>Experiences:</h3>
+          {formData.experiences.map((exp, index) => (
+            <div key={index} className="experience-section">
+              <label htmlFor={`company_name-${index}`}>Company:</label>
+              <input
+                type="text"
+                id={`company_name-${index}`}
+                name="company_name"
+                data-field-type="experience"
+                data-index={index}
+                value={exp.company_name}
+                onChange={handleChange}
+                required
+              />
 
-            <label htmlFor={`position-${index}`}>Position:</label>
-            <input
-              type="text"
-              id={`position-${index}`}
-              name="position"
-              data-field-type="experience"
-              data-index={index}
-              value={exp.position}
-              onChange={handleChange}
-              required
-            />
+              <label htmlFor={`position-${index}`}>Position:</label>
+              <input
+                type="text"
+                id={`position-${index}`}
+                name="position"
+                data-field-type="experience"
+                data-index={index}
+                value={exp.position}
+                onChange={handleChange}
+                required
+              />
 
-            <label htmlFor={`start_date-${index}`}>Start Date:</label>
-            <input
-              type="date" // Change to type="date"
-              id={`start_date-${index}`}
-              name="start_date"
-              data-field-type="experience"
-              data-index={index}
-              value={exp.start_date}
-              onChange={handleChange}
-              required
-            />
+              <label htmlFor={`start_date-${index}`}>Start Date:</label>
+              <input
+                type="date" // Change to type="date"
+                id={`start_date-${index}`}
+                name="start_date"
+                data-field-type="experience"
+                data-index={index}
+                value={exp.start_date}
+                onChange={handleChange}
+                required
+              />
 
-            <label htmlFor={`end_date-${index}`}>End Date:</label>
-            <input
-              type="date" // Change to type="date"
-              id={`end_date-${index}`}
-              name="end_date"
-              data-field-type="experience"
-              data-index={index}
-              value={exp.end_date}
-              onChange={handleChange}
-              required
-            />
-          </div>
-        ))}
-        <button type="button" className="add-section-btn" onClick={handleAddExperience}>
-          Add Experience
-        </button>
+              <label htmlFor={`end_date-${index}`}>End Date:</label>
+              <input
+                type="date" // Change to type="date"
+                id={`end_date-${index}`}
+                name="end_date"
+                data-field-type="experience"
+                data-index={index}
+                value={exp.end_date}
+                onChange={handleChange}
+                required
+              />
+            </div>
+          ))}
+          <button type="button" className="add-section-btn" onClick={handleAddExperience}>
+            Add Experience
+          </button>
 
-        <button type="submit">Submit</button>
-      </form>
-    </div>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </>
   );
 };
 

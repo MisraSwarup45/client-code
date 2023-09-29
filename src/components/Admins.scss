@@ -1,0 +1,112 @@
+/* Admins.scss */
+
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Body styles */
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+  }
+  
+  /* Container styles */
+  .App {
+    // max-width: 800px;
+    margin: 7% auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Header styles */
+  h1 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #0553AA;
+  }
+  
+  /* Admin item styles */
+  li {
+    background-color: #fff;
+    border-radius: 5px;
+    margin: 20px 0;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Admin name styles */
+  h2 {
+    font-size: 1.4rem;
+    color: #333;
+    margin-bottom: 5px;
+  }
+  
+  /* Admin email styles */
+  p {
+    font-size: 1rem;
+    color: #666;
+  }
+  
+  /* Experiences and Educations styles */
+  h3 {
+    font-size: 1.2rem;
+    margin-top: 20px;
+    color: #0553AA;
+  }
+  
+  /* List styles */
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  /* List item styles */
+  li > ul {
+    margin-top: 10px;
+    padding: 0;
+  }
+  
+  /* List item content styles */
+  li > ul > li {
+    font-size: 1rem;
+    color: #333;
+    margin: 5px 0;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 600px) {
+    .App {
+      padding: 10px;
+    }
+  
+    h1 {
+      font-size: 1.5rem;
+    }
+  
+    li {
+      margin: 10px 0;
+      padding: 10px;
+    }
+  
+    h2 {
+      font-size: 1.2rem;
+    }
+  
+    p {
+      font-size: 0.9rem;
+    }
+  
+    h3 {
+      font-size: 1.1rem;
+    }
+  
+    li > ul > li {
+      font-size: 0.9rem;
+    }
+  }
+  
